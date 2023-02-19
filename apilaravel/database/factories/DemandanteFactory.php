@@ -17,7 +17,8 @@ class DemandanteFactory extends Factory
     public function definition(): array
     {
         return [
-
+            'nombre'=>$this->faker->sentence(2),
+            'cuantia'=>$this->faker->numberBetween(0,10000)
         ];
     }
 }

@@ -14,7 +14,8 @@ class DemandanteController extends Controller
      */
     public function index(): Response
     {
-        //
+        $demandantes = Demandante::all()->get();
+        return $demandantes;
     }
 
     /**

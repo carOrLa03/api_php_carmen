@@ -14,8 +14,8 @@ class PrestacionController extends Controller
      */
     public function index(): Response
     {
-        $registros = Prestacion::all()->get();
-        return $registros;
+        $prestaciones = Prestacion::all()->get();
+        return view('welcome', ['prestaciones'=>$prestaciones]);
     }
 
     /**
