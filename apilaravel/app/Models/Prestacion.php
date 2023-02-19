@@ -9,9 +9,15 @@ class Prestacion extends Model
 {
     use HasFactory;
 
-    protected $table = 'prestacion';
+    protected $table = 'prestacions';
+
+    protected $fillable = [
+        'id',
+        'nombre',
+        'cuantia',
+    ];
 
     public function demandantes(){
-        return $this->belongsToMany(Demandante::class);
+        return $this->belongsToMany(Demandante::class, 'prestamos');
     }
 }

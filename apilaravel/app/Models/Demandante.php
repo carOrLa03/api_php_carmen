@@ -9,9 +9,16 @@ class Demandante extends Model
 {
     use HasFactory;
 
-    protected $table = 'demandante';
+    protected $table = 'demandantes';
+
+    protected $fillable = [
+        'id',
+        'nombre',
+        'email',
+        'edad'
+    ];
 
     public function prestaciones(){
-        return $this->belongsToMany(Prestacion::class);
+        return $this->belongsToMany(Prestacion::class, 'prestamos');
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DemandanteController;
+use App\Http\Controllers\PrestacionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,25 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Route::apiResource('prestaciones', PrestacionController::class)
+//    ->only(['index', 'store', 'show', 'update', 'destroy']);
+
+//Route::apiResource('demandantes', DemandanteController::class)
+//    ->only(['index', 'store', 'show','update', 'destroy']);
+
+
+
+Route::get('prestaciones', [PrestacionController::class, 'index']);
+Route::get('/prestaciones/{id}',[PrestacionController::class , 'show']);
+Route::post('/prestaciones',[PrestacionController::class , 'store']);
+Route::put('/prestaciones/{id}', [PrestacionController::class, 'update']);
+Route::delete('/prestaciones/{id}', [PrestacionController::class, 'destroy']);
+
+Route::get('/demandantes',[DemandanteController::class , 'index']);
+Route::get('/demandantes/{id}',[DemandanteController::class , 'show']);
+Route::post('/demandantes',[DemandanteController::class , 'store']);
+Route::put('/demandantes/{id}',[DemandanteController::class , 'update']);
+Route::delete('/demandantes/{id}', [DemandanteController::class, 'destroy']);
+Route::post('/demandantes/prestacion',[DemandanteController::class , 'attach']);
+Route::delete('/demandantes',[DemandanteController::class , 'detach']);

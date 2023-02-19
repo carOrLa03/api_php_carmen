@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('demandantes', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->double('cuantia');
+            $table->string('email');
+            $table->integer('edad');
             $table->timestamps();
         });
     }

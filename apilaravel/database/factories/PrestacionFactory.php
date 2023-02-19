@@ -17,9 +17,8 @@ class PrestacionFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre'=>$this->faker->name(),
-            'email'=>$this->faker->unique()->safeEmail(),
-            'edad'=>$this->faker->numberBetween(20,99),
+            'nombre'=>$this->faker->sentence(2),
+            'cuantia'=>$this->faker->numberBetween(0,10000)
         ];
     }
 }

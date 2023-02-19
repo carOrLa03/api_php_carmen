@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('prestacions', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('email');
-            $table->integer('edad');
+            $table->double('cuantia');
+
             $table->timestamps();
         });
     }
