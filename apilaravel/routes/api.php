@@ -35,9 +35,9 @@ Route::put('/prestaciones/{id}', [PrestacionController::class, 'update']);
 Route::delete('/prestaciones/{id}', [PrestacionController::class, 'destroy']);
 
 Route::get('/demandantes',[DemandanteController::class , 'index']);
-Route::get('/demandantes/{id}',[DemandanteController::class , 'show']);
-Route::post('/demandantes',[DemandanteController::class , 'store']);
-Route::put('/demandantes/{id}',[DemandanteController::class , 'update']);
-Route::delete('/demandantes/{id}', [DemandanteController::class, 'destroy']);
+Route::get('/demandante/{id}',[DemandanteController::class , 'show']);
+Route::post('/demandante',[DemandanteController::class , 'store']);
+Route::put('/demandante/{id}',[DemandanteController::class , 'update']);
+Route::delete('/demandante/{id}', [DemandanteController::class, 'destroy']);
 Route::post('/demandantes/prestacion',[DemandanteController::class , 'attach']);
-Route::delete('/demandantes',[DemandanteController::class , 'detach']);
+Route::delete('/demandantes/prestacion',[DemandanteController::class , 'detach']);
